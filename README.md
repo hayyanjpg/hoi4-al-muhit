@@ -27,8 +27,14 @@ Mod HOI4 1.20.x. Tanpa konversi peta (tidak ada error map).
   2 submarine, 2 permukaan campuran (destroyer + battleship + CV),
   1 manajemen.
   Semua sudah di-`recruit_character` di 1936.
-- Warna peta/UI negara: emas (212 175 55 / 255 215 100); bendera emas
+- Warna peta/UI negara: emas (212 175 55 / 255 215 100); bendera `EGY` emas
   (basis 212 175 55, pinggir 255 215 100, lambang perunggu 96 68 16).
+  Bendera `CAL` sesudah proklamasi: emas terang (255 215 100) dengan lambang
+  dan pinggir perunggu, jadi jelas berubah dari bendera `EGY`.
+- Tampilan kota: hanya `map/cities.bmp` yang di-override. Piksel gaya `unciv`
+  (indeks 2) di 19 state mod diganti jadi gaya `westerngfx` (indeks 15),
+  sehingga kota Mesir tampak seperti New York/London. File `map/` lain
+  tetap vanilla (tidak ada konversi peta yang dulu menyebabkan error).
 - Tech awal: 200 tech dari save Al-Muhit 1941.12.1 (199 level 1, mechanised_infantry2 level 2).
 - Grand doctrine seperti awal: hanya `grand_battleplan`.
 - 4 research slot sejak 1936.

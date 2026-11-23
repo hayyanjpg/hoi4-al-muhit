@@ -1079,14 +1079,14 @@ color = { 30 120 65 }
 def write_caliphate_flag():
     from PIL import Image, ImageDraw
     size = (82, 52)
-    im = Image.new("RGBA", size, (30, 120, 65, 255))
+    im = Image.new("RGBA", size, GOLD + (255,))
     d = ImageDraw.Draw(im)
-    d.rectangle([0, 0, 81, 51], outline=GOLD + (255,), width=2)
-    d.ellipse([28, 14, 54, 40], fill=GOLD + (255,))
-    d.ellipse([35, 10, 60, 35], fill=(30, 120, 65, 255))
+    d.rectangle([0, 0, 81, 51], outline=FLAG_DARK + (255,), width=2)
+    d.ellipse([28, 14, 54, 40], fill=FLAG_DARK + (255,))
+    d.ellipse([35, 10, 60, 35], fill=GOLD + (255,))
     d.polygon([(61, 17), (64, 22), (70, 23), (66, 27), (67, 33),
                (61, 30), (56, 33), (58, 27), (54, 22), (60, 23)],
-              fill=GOLD + (255,))
+              fill=FLAG_DARK + (255,))
     variants = ["CAL"] + ["CAL_%s" % x
                           for x in ("neutrality", "democratic", "fascism", "communism")]
     for folder, fsize in (("", size), ("medium", (41, 26)), ("small", (10, 7))):
@@ -1095,6 +1095,57 @@ def write_caliphate_flag():
         scaled = im if fsize == size else im.resize(fsize, Image.Resampling.LANCZOS)
         for name in variants:
             scaled.save(os.path.join(out_dir, name + ".tga"))
+
+
+def write_cities_bmp():
+    """Gaya kota: ganti mesh 'unciv' (index 2) jadi 'westerngfx' (index 15).
+
+    Hanya map/cities.bmp yang di-override. File map lain (provinces.bmp,
+    definition.csv, terrain.bmp, default.map, dll.) tetap memakai vanilla,
+    jadi tidak ada ketidakcocokan yang memicu 'Failed to load the map'.
+    """
+    import csv
+    import numpy as np
+    from PIL import Image
+
+    map_dir = os.path.join(GAME, "map")
+    prov_img = Image.open(os.path.join(map_dir, "provinces.bmp")).convert("RGB")
+    city_img = Image.open(os.path.join(map_dir, "cities.bmp"))
+
+    wanted = set()
+    state_dir = os.path.join(MOD, "history", "states")
+    for fn in os.listdir(state_dir):
+        if not fn.endswith(".txt"):
+            continue
+        txt = open(os.path.join(state_dir, fn), encoding="utf-8-sig",
+                   errors="replace").read()
+        m = re.search(r"provinces\s*=\s*\{(.*?)\}", txt, re.S)
+        if m:
+            wanted.update(int(x) for x in m.group(1).split())
+
+    keys = set()
+    with open(os.path.join(map_dir, "definition.csv"), encoding="utf-8-sig",
+              errors="replace") as f:
+        for row in csv.reader(f, delimiter=";"):
+            if len(row) >= 4 and row[0].isdigit() and int(row[0]) in wanted:
+                keys.add((int(row[1]) << 16) | (int(row[2]) << 8) | int(row[3]))
+
+    lut = np.zeros(1 << 24, dtype=bool)
+    lut[list(keys)] = True
+    p = np.asarray(prov_img, dtype=np.uint32)
+    h, w = p.shape[:2]
+    packed = (p[:, :, 0] << 16) | (p[:, :, 1] << 8) | p[:, :, 2]
+    mask = lut[packed.reshape(-1)].reshape((h, w))
+
+    c = np.array(city_img)
+    target = mask & (c == 2)
+    changed = int(np.count_nonzero(target))
+    c[target] = 15
+    out = Image.fromarray(c, mode="P")
+    out.putpalette(city_img.getpalette())
+    os.makedirs(os.path.join(MOD, "map"), exist_ok=True)
+    out.save(os.path.join(MOD, "map", "cities.bmp"))
+    return changed
 
 
 # ----------------------------------------------------------- descriptor -----
@@ -1148,8 +1199,14 @@ Mod HOI4 1.20.x. Tanpa konversi peta (tidak ada error map).
   2 submarine, 2 permukaan campuran (destroyer + battleship + CV),
   1 manajemen.
   Semua sudah di-`recruit_character` di 1936.
-- Warna peta/UI negara: emas (212 175 55 / 255 215 100); bendera emas
+- Warna peta/UI negara: emas (212 175 55 / 255 215 100); bendera `EGY` emas
   (basis 212 175 55, pinggir 255 215 100, lambang perunggu 96 68 16).
+  Bendera `CAL` sesudah proklamasi: emas terang (255 215 100) dengan lambang
+  dan pinggir perunggu, jadi jelas berubah dari bendera `EGY`.
+- Tampilan kota: hanya `map/cities.bmp` yang di-override. Piksel gaya `unciv`
+  (indeks 2) di 19 state mod diganti jadi gaya `westerngfx` (indeks 15),
+  sehingga kota Mesir tampak seperti New York/London. File `map/` lain
+  tetap vanilla (tidak ada konversi peta yang dulu menyebabkan error).
 - Tech awal: 200 tech dari save Al-Muhit 1941.12.1 (199 level 1, mechanised_infantry2 level 2).
 - Grand doctrine seperti awal: hanya `grand_battleplan`.
 - 4 research slot sejak 1936.
@@ -1197,6 +1254,7 @@ def main():
     write_caliphate_event()
     write_caliphate_country()
     write_caliphate_flag()
+    changed = write_cities_bmp()
     write_focus()
     write_localisation()
     write_flag()
@@ -1225,6 +1283,7 @@ def main():
     print("TRAIT KHALIFAH  : awal gsm_stability -> event gsm_caliph (kosmetik)")
     print("FOKUS           : 3 focus (industri -> islamic unity -> proklamasi)")
     print("KEKHALIFAHAN    : decision + focus + event gsm_caliphate.1, cosmetic tag CAL")
+    print("KOTA            : %d piksel gaya unciv -> westerngfx di map/cities.bmp" % changed)
     print("MOD:", MOD)
 
 

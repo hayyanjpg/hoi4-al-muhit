@@ -265,8 +265,8 @@ def check(cond, msg):
         errors.append(msg)
 
 
-check(not os.path.exists(os.path.join(MOD, "map")),
-      "folder map/ masih ada (harus dihapus agar error map hilang)")
+# map/ hanya boleh berisi cities.bmp (override minimal untuk gaya kota).
+# File map lain dilarang karena dulu memicu 'Failed to load the map'.
 
 # --- state ---
 totals = defaultdict(int)
@@ -730,10 +730,25 @@ if os.path.isfile(colors):
     check("230 230 70" not in t,
           "masih ada warna EGY lama (230 230 70) -> blok rusak")
 
+# --- tampilan kota: hanya cities.bmp yang boleh di-override ---
+mapdir = os.path.join(MOD, "map")
+mapfiles = sorted(os.listdir(mapdir)) if os.path.isdir(mapdir) else []
+check(mapfiles == ["cities.bmp"],
+      "override map/ harus hanya cities.bmp, ditemukan: %s" % mapfiles)
+cities = os.path.join(mapdir, "cities.bmp")
+check(os.path.isfile(cities), "map/cities.bmp hilang")
+if os.path.isfile(cities):
+    ci = Image.open(cities)
+    check(ci.size == (5632, 2048) and ci.mode == "P",
+          "map/cities.bmp size/mode salah: %s %s" % (ci.size, ci.mode))
+    ci.close()
+
 # --- flags ---
 for folder, fsize in (("", (82, 52)), ("medium", (41, 26)), ("small", (10, 7))):
     for fn in ("EGY.tga", "EGY_neutrality.tga", "EGY_fascism.tga",
-               "EGY_communism.tga", "EGY_democratic.tga"):
+               "EGY_communism.tga", "EGY_democratic.tga",
+               "CAL.tga", "CAL_neutrality.tga", "CAL_fascism.tga",
+               "CAL_communism.tga", "CAL_democratic.tga"):
         p = os.path.join(MOD, "gfx", "flags", folder, fn)
         check(os.path.isfile(p), "flag %s/%s hilang" % (folder, fn))
         if os.path.isfile(p):
@@ -749,6 +764,15 @@ for folder, fsize in (("", (82, 52)), ("medium", (41, 26)), ("small", (10, 7))):
                           "pinggir bendera EGY bukan emas terang")
                     check(rgba.getpixel((30, 26)) == (96, 68, 16, 255),
                           "lambang bendera EGY bukan perunggu")
+                    rgba.close()
+                if folder == "" and fn == "CAL.tga" and im.size == (82, 52):
+                    rgba = im.convert("RGBA")
+                    check(rgba.getpixel((5, 5)) == (255, 215, 100, 255),
+                          "bendera CAL bukan emas terang")
+                    check(rgba.getpixel((0, 0)) == (96, 68, 16, 255),
+                          "pinggir bendera CAL bukan perunggu")
+                    check(rgba.getpixel((30, 26)) == (96, 68, 16, 255),
+                          "lambang bendera CAL bukan perunggu")
                     rgba.close()
                 im.close()
             except Exception as e:
@@ -769,4 +793,4 @@ if errors:
     for e in errors:
         print(" -", e)
     sys.exit(1)
-print("VALIDASI OK: Mesir 112 slot + 11 state baru 99 slot, tanpa override peta.")
+print("VALIDASI OK: Mesir 112 slot + 11 state baru 99 slot, map/ hanya cities.bmp.")
