@@ -1,0 +1,25 @@
+add_namespace = gsm_caliphate
+
+country_event = {
+	id = gsm_caliphate.1
+	title = gsm_caliphate.1.t
+	desc = gsm_caliphate.1.d
+	picture = GFX_report_event_generic_military_parade
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		hidden_effect = {
+			set_cosmetic_tag = CAL
+			set_country_flag = gsm_caliphate_proclaimed
+			remove_country_leader_trait = gsm_stability
+			add_country_leader_trait = gsm_caliph
+			add_manpower = 25000
+			add_ideas = gsm_caliphate_legacy
+		}
+	}
+
+	option = {
+		name = gsm_caliphate.1.a
+	}
+}

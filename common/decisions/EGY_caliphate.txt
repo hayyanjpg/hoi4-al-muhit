@@ -1,0 +1,30 @@
+gsm_caliphate_category = {
+	gsm_proclaim_caliphate = {
+		priority = 100
+		icon = GFX_decision_eng_trade_unions_support
+
+		allowed = {
+			original_tag = EGY
+		}
+
+		available = {
+			OR = { TUR = { is_subject_of = EGY } TUR = { exists = no } }
+			OR = { IRQ = { is_subject_of = EGY } IRQ = { exists = no } }
+			OR = { SAU = { is_subject_of = EGY } SAU = { exists = no } }
+			OR = { ISR = { is_subject_of = EGY } ISR = { exists = no } }
+			OR = { LEB = { is_subject_of = EGY } LEB = { exists = no } }
+			OR = { JOR = { is_subject_of = EGY } JOR = { exists = no } }
+		}
+
+		visible = {
+			NOT = { has_country_flag = gsm_caliphate_proclaimed }
+		}
+
+		fire_only_once = yes
+		cost = 100
+
+		complete_effect = {
+			country_event = { id = gsm_caliphate.1 days = 1 }
+		}
+	}
+}

@@ -1,0 +1,72 @@
+focus_tree = {
+	id = egy_tree
+
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = EGY
+		}
+	}
+
+	default = no
+
+	focus = {
+		id = EGY_scientific_industrial_renaissance
+		icon = GFX_focus_research
+		x = 0
+		y = 0
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_ideas = gsm_scientific_industry
+			add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = EGY_islamic_unity
+		icon = GFX_focus_generic_manpower
+		x = 0
+		y = 1
+		cost = 10
+		prerequisite = {
+			focus = EGY_scientific_industrial_renaissance
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_political_power = 150
+			add_manpower = 15000
+		}
+	}
+
+	focus = {
+		id = EGY_proclaim_caliphate
+		icon = GFX_focus_generic_monarchy_1
+		x = 0
+		y = 2
+		cost = 20
+		prerequisite = {
+			focus = EGY_islamic_unity
+		}
+		available = {
+			NOT = { has_country_flag = gsm_caliphate_proclaimed }
+			OR = { TUR = { is_subject_of = EGY } TUR = { exists = no } }
+			OR = { IRQ = { is_subject_of = EGY } IRQ = { exists = no } }
+			OR = { SAU = { is_subject_of = EGY } SAU = { exists = no } }
+			OR = { ISR = { is_subject_of = EGY } ISR = { exists = no } }
+			OR = { LEB = { is_subject_of = EGY } LEB = { exists = no } }
+			OR = { JOR = { is_subject_of = EGY } JOR = { exists = no } }
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			country_event = { id = gsm_caliphate.1 days = 1 }
+		}
+	}
+}

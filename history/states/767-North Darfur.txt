@@ -1,0 +1,30 @@
+# Al-Muhit: core SUD/JOR/ISR/LEB diambil alih, large_city, 99 slot industri
+state = {
+	id = 767
+	name = "STATE_767" # North Darfur
+	manpower = 8143
+	
+	state_category = large_city
+	impassable = yes
+	force_link_ownership_to = 551 # Kharthoum
+	
+	history = {
+
+		owner = EGY
+		add_core_of = EGY
+		add_core_of = SUD
+		
+		buildings = {
+			arms_factory = 4
+			dockyard = 0
+			industrial_complex = 5
+			infrastructure = 0
+		}
+	}
+
+	provinces = {
+		7987 8103 10900
+	}
+
+	local_supplies = 0.0 
+}

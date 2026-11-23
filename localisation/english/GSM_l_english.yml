@@ -1,0 +1,89 @@
+﻿l_english:
+	EGY: "Grand Sultanate of Al-Muhit"
+	EGY_DEF: "Al-Muhit"
+	EGY_ADJ: "Al-Muhitian"
+	EGY_PLAN: "Al-Muhit"
+
+	EGY_neutrality: "Grand Sultanate of Al-Muhit"
+	EGY_neutrality_DEF: "the Grand Sultanate of Al-Muhit"
+	EGY_neutrality_ADJ: "Al-Muhitian"
+	EGY_brit_puppet: "Grand Sultanate of Al-Muhit"
+	EGY_brit_puppet_DEF: "the Grand Sultanate of Al-Muhit"
+	EGY_brit_puppet_ADJ: "Al-Muhitian"
+
+	STATE_907: "Dar al-Khilafah"
+	STATE_446: "Al-Qasr"
+	STATE_447: "Bandar Al-Nur"
+	STATE_452: "Madinat Al-Hadid"
+	STATE_453: "Wadi Al-Sina'a"
+	STATE_456: "Dar Al-Hikma"
+	STATE_457: "Jazirat Al-Hikma"
+	STATE_552: "Sahl Al-Fann"
+
+	VICTORY_POINTS_7011: "Dar al-Khilafah"
+	VICTORY_POINTS_3996: "Dar Al-Hikma"
+	VICTORY_POINTS_1068: "Bandar Al-Nur"
+	VICTORY_POINTS_12049: "Al-Qasr"
+	VICTORY_POINTS_4073: "Port Al-Salam"
+	VICTORY_POINTS_907: "Dar al-Khilafah"
+
+	gsm_scientific_industry: "Scientific & Industrial Renaissance"
+	gsm_scientific_industry_desc: "Our shipyards turn the Nile delta into the forge of a new fleet, raising dockyard output by ten percent."
+
+	EGY_scientific_industrial_renaissance: "Scientific & Industrial Renaissance"
+	EGY_scientific_industrial_renaissance_desc: "Empower our shipyards to forge a new fleet for the Grand Sultanate."
+
+	EGY_islamic_unity: "Islamic Unity"
+	EGY_islamic_unity_desc: "Rally the faithful behind the Caliph and prepare the realm for a greater union."
+
+	EGY_proclaim_caliphate: "Proclaim the Caliphate"
+	EGY_proclaim_caliphate_desc: "With the Islamic world united under our banner, declare the Grand Islamic Caliphate."
+
+	gsm_stability: "Steadfast Caliph"
+	gsm_stability_desc: "The Caliph's steady hand keeps the realm united."
+
+	gsm_caliph: "Caliph of the Faithful"
+	gsm_caliph_desc: "The Caliph's authority unites the faithful under one banner."
+
+	gsm_caliphate_legacy: "Legacy of the Caliphate"
+	gsm_caliphate_legacy_desc: "By the Caliph's decree: +10% war support, +15% stability and +1% recruitable population."
+
+	gsm_caliphate_category: "The Caliphate"
+
+	gsm_proclaim_caliphate: "Proclaim the Caliphate"
+	gsm_proclaim_caliphate_desc: "With the holy cities and the wider Islamic world under our sway, declare the Grand Islamic Caliphate."
+
+	gsm_caliphate.1.t: "The Grand Islamic Caliphate"
+	gsm_caliphate.1.d: "The Caliphate is proclaimed. Our flag changes, our name resounds across the Islamic world, and fresh manpower answers the call."
+
+	gsm_caliphate.1.a: "Long live the Caliphate"
+
+	CAL: "Grand Islamic Caliphate"
+	CAL_DEF: "the Grand Islamic Caliphate"
+	CAL_ADJ: "Caliphal"
+	CAL_PLAN: "Grand Islamic Caliphate"
+	CAL_neutrality: "Grand Islamic Caliphate"
+	CAL_democratic: "Grand Islamic Caliphate"
+	CAL_fascism: "Grand Islamic Caliphate"
+	CAL_communism: "Grand Islamic Caliphate"
+
+	EGY_khalid_ibn_al_walid: "Khalid ibn al-Walid"
+	EGY_salah_al_din: "Salah al-Din al-Ayyubi"
+	EGY_amr_ibn_al_as: "Amr ibn al-As"
+	EGY_tariq_ibn_ziyad: "Tariq ibn Ziyad"
+	EGY_musa_ibn_nusayr: "Musa ibn Nusayr"
+	EGY_qutayba_ibn_muslim: "Qutayba ibn Muslim"
+	EGY_zubayr_ibn_al_awwam: "Zubayr ibn al-Awwam"
+	EGY_sad_ibn_abi_waqqas: "Sa'd ibn Abi Waqqas"
+	EGY_abu_ubayda: "Abu Ubayda ibn al-Jarrah"
+	EGY_qaqa_ibn_amr: "Al-Qa'qa' ibn Amr"
+	EGY_ikrima_ibn_abi_jahl: "Ikrima ibn Abi Jahl"
+	EGY_walid_ibn_uqba: "Walid ibn Uqba"
+	EGY_habib_ibn_maslama: "Habib ibn Maslama"
+	EGY_shurahbil_ibn_hasana: "Shurahbil ibn Hasana"
+	EGY_numan_ibn_muqrin: "Nu'man ibn Muqrin"
+	EGY_admiral_abu_al_fath: "Abu al-Fath"
+	EGY_admiral_uthman_al_ghazi: "Uthman al-Ghazi"
+	EGY_admiral_khalil_al_bahri: "Khalil al-Bahri"
+	EGY_admiral_nur_al_din: "Nur al-Din"
+	EGY_admiral_ishaq_al_muhandis: "Ishaq al-Muhandis"

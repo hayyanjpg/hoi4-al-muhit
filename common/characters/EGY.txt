@@ -1,0 +1,362 @@
+characters = {
+	EGY_khalid_ibn_al_walid = {
+		name = EGY_khalid_ibn_al_walid
+		portraits = {
+			army = {
+				large = GFX_portrait_arabia_generic_land_7
+				small = GFX_portrait_arabia_generic_land_7_small
+			}
+		}
+		field_marshal = {
+			traits = { logistics_wizard }
+			skill = 7
+			attack_skill = 8
+			defense_skill = 4
+			planning_skill = 6
+			logistics_skill = 6
+		}
+	}
+
+	EGY_salah_al_din = {
+		name = EGY_salah_al_din
+		portraits = {
+			army = {
+				large = GFX_portrait_AFG_generic_land_1
+				small = GFX_portrait_AFG_generic_land_1_small
+			}
+		}
+		field_marshal = {
+			traits = { defensive_doctrine }
+			skill = 5
+			attack_skill = 5
+			defense_skill = 4
+			planning_skill = 4
+			logistics_skill = 4
+		}
+	}
+
+	EGY_amr_ibn_al_as = {
+		name = EGY_amr_ibn_al_as
+		portraits = {
+			army = {
+				large = GFX_portrait_arabia_generic_land_6
+				small = GFX_portrait_arabia_generic_land_6_small
+			}
+		}
+		field_marshal = {
+			traits = { unyielding_defender trait_cautious }
+			skill = 5
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 5
+			logistics_skill = 5
+		}
+	}
+
+	EGY_tariq_ibn_ziyad = {
+		name = EGY_tariq_ibn_ziyad
+		portraits = {
+			army = {
+				large = GFX_portrait_AFG_generic_land_1
+				small = GFX_portrait_AFG_generic_land_1_small
+			}
+		}
+		corps_commander = {
+			traits = { trait_mountaineer }
+			skill = 4
+			attack_skill = 5
+			defense_skill = 4
+			planning_skill = 5
+			logistics_skill = 4
+		}
+	}
+
+	EGY_musa_ibn_nusayr = {
+		name = EGY_musa_ibn_nusayr
+		portraits = {
+			army = {
+				large = GFX_portrait_arabia_generic_land_5
+				small = GFX_portrait_arabia_generic_land_5_small
+			}
+		}
+		corps_commander = {
+			traits = { ranger paratrooper engineer_officer }
+			skill = 4
+			attack_skill = 5
+			defense_skill = 5
+			planning_skill = 5
+			logistics_skill = 5
+		}
+	}
+
+	EGY_qutayba_ibn_muslim = {
+		name = EGY_qutayba_ibn_muslim
+		portraits = {
+			army = {
+				large = GFX_portrait_arabia_generic_land_5
+				small = GFX_portrait_arabia_generic_land_5_small
+			}
+		}
+		corps_commander = {
+			traits = { paratrooper trickster }
+			skill = 5
+			attack_skill = 5
+			defense_skill = 5
+			planning_skill = 4
+			logistics_skill = 4
+		}
+	}
+
+	EGY_zubayr_ibn_al_awwam = {
+		name = EGY_zubayr_ibn_al_awwam
+		portraits = {
+			army = {
+				large = GFX_portrait_arabia_generic_land_6
+				small = GFX_portrait_arabia_generic_land_6_small
+			}
+		}
+		corps_commander = {
+			traits = { urban_assault_specialist guerilla_fighter trait_reckless }
+			skill = 4
+			attack_skill = 5
+			defense_skill = 4
+			planning_skill = 5
+			logistics_skill = 5
+		}
+	}
+
+	EGY_sad_ibn_abi_waqqas = {
+		name = EGY_sad_ibn_abi_waqqas
+		portraits = {
+			army = {
+				large = GFX_portrait_AFG_generic_land_2
+				small = GFX_portrait_AFG_generic_land_2_small
+			}
+		}
+		corps_commander = {
+			traits = { desert_fox }
+			skill = 5
+			attack_skill = 5
+			defense_skill = 4
+			planning_skill = 5
+			logistics_skill = 4
+		}
+	}
+
+	EGY_abu_ubayda = {
+		name = EGY_abu_ubayda
+		portraits = {
+			army = {
+				large = GFX_portrait_arabia_generic_land_6
+				small = GFX_portrait_arabia_generic_land_6_small
+			}
+		}
+		corps_commander = {
+			traits = { fortress_buster desert_fox winter_expert }
+			skill = 4
+			attack_skill = 5
+			defense_skill = 4
+			planning_skill = 5
+			logistics_skill = 4
+		}
+	}
+
+	EGY_qaqa_ibn_amr = {
+		name = EGY_qaqa_ibn_amr
+		portraits = {
+			army = {
+				large = GFX_portrait_AFG_generic_land_3
+				small = GFX_portrait_AFG_generic_land_3_small
+			}
+		}
+		corps_commander = {
+			traits = { brave paratrooper camouflage_expert }
+			skill = 5
+			attack_skill = 4
+			defense_skill = 5
+			planning_skill = 5
+			logistics_skill = 4
+		}
+	}
+
+	EGY_ikrima_ibn_abi_jahl = {
+		name = EGY_ikrima_ibn_abi_jahl
+		portraits = {
+			army = {
+				large = GFX_portrait_AFG_generic_land_1
+				small = GFX_portrait_AFG_generic_land_1_small
+			}
+		}
+		corps_commander = {
+			traits = { brave paratrooper }
+			skill = 5
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 4
+			logistics_skill = 4
+		}
+	}
+
+	EGY_walid_ibn_uqba = {
+		name = EGY_walid_ibn_uqba
+		portraits = {
+			army = {
+				large = GFX_portrait_AFG_generic_land_4
+				small = GFX_portrait_AFG_generic_land_4_small
+			}
+		}
+		corps_commander = {
+			traits = { infantry_expert desert_fox }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 5
+			planning_skill = 4
+			logistics_skill = 4
+		}
+	}
+
+	EGY_habib_ibn_maslama = {
+		name = EGY_habib_ibn_maslama
+		portraits = {
+			army = {
+				large = GFX_portrait_arabia_generic_land_7
+				small = GFX_portrait_arabia_generic_land_7_small
+			}
+		}
+		corps_commander = {
+			traits = { ambusher hill_fighter }
+			skill = 5
+			attack_skill = 5
+			defense_skill = 4
+			planning_skill = 5
+			logistics_skill = 5
+		}
+	}
+
+	EGY_shurahbil_ibn_hasana = {
+		name = EGY_shurahbil_ibn_hasana
+		portraits = {
+			army = {
+				large = GFX_portrait_AFG_generic_land_4
+				small = GFX_portrait_AFG_generic_land_4_small
+			}
+		}
+		corps_commander = {
+			traits = { ranger urban_assault_specialist old_guard }
+			skill = 4
+			attack_skill = 5
+			defense_skill = 5
+			planning_skill = 4
+			logistics_skill = 4
+		}
+	}
+
+	EGY_numan_ibn_muqrin = {
+		name = EGY_numan_ibn_muqrin
+		portraits = {
+			army = {
+				large = GFX_portrait_AFG_generic_land_3
+				small = GFX_portrait_AFG_generic_land_3_small
+			}
+		}
+		corps_commander = {
+			traits = { urban_assault_specialist ranger hill_fighter }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 5
+			planning_skill = 4
+			logistics_skill = 5
+		}
+	}
+
+	EGY_admiral_abu_al_fath = {
+		name = EGY_admiral_abu_al_fath
+		portraits = {
+			army = {
+				large = GFX_portrait_AFG_generic_navy_1
+				small = GFX_portrait_AFG_generic_navy_1_small
+			}
+		}
+		navy_leader = {
+			traits = { submarine_officer seawolf silent_hunter hunter_killer }
+			skill = 3
+			attack_skill = 5
+			defense_skill = 5
+			maneuvering_skill = 5
+			coordination_skill = 3
+		}
+	}
+
+	EGY_admiral_uthman_al_ghazi = {
+		name = EGY_admiral_uthman_al_ghazi
+		portraits = {
+			army = {
+				large = GFX_portrait_AFG_generic_navy_2
+				small = GFX_portrait_AFG_generic_navy_2_small
+			}
+		}
+		navy_leader = {
+			traits = { submarine_officer seawolf lone_wolf torpedo_expert search_pattern_expert }
+			skill = 5
+			attack_skill = 5
+			defense_skill = 5
+			maneuvering_skill = 5
+			coordination_skill = 5
+		}
+	}
+
+	EGY_admiral_khalil_al_bahri = {
+		name = EGY_admiral_khalil_al_bahri
+		portraits = {
+			army = {
+				large = GFX_Portrait_Arabia_Generic_navy_1
+				small = GFX_Portrait_Arabia_Generic_navy_1_small
+			}
+		}
+		navy_leader = {
+			traits = { destroyer_officer fleet_protector battleship_adherent heavy_ship_officer carrier_officer air_controller }
+			skill = 3
+			attack_skill = 5
+			defense_skill = 5
+			maneuvering_skill = 4
+			coordination_skill = 5
+		}
+	}
+
+	EGY_admiral_nur_al_din = {
+		name = EGY_admiral_nur_al_din
+		portraits = {
+			army = {
+				large = GFX_Portrait_Arabia_Generic_navy_2
+				small = GFX_Portrait_Arabia_Generic_navy_2_small
+			}
+		}
+		navy_leader = {
+			traits = { destroyer_leader smoke_screen_expert ironside big_guns_expert aviation_enthusiast flight_deck_manager }
+			skill = 5
+			attack_skill = 5
+			defense_skill = 5
+			maneuvering_skill = 5
+			coordination_skill = 3
+		}
+	}
+
+	EGY_admiral_ishaq_al_muhandis = {
+		name = EGY_admiral_ishaq_al_muhandis
+		portraits = {
+			army = {
+				large = GFX_portrait_arabia_generic_navy_3
+				small = GFX_portrait_arabia_generic_navy_3_small
+			}
+		}
+		navy_leader = {
+			traits = { chief_engineer safety_first navy_career_officer loading_drill_master }
+			skill = 5
+			attack_skill = 4
+			defense_skill = 5
+			maneuvering_skill = 3
+			coordination_skill = 5
+		}
+	}
+
+}

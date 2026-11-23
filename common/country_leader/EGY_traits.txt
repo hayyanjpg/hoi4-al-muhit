@@ -1,0 +1,14 @@
+leader_traits = {
+	gsm_stability = {
+		random = no
+		sprite = 13
+		stability_factor = 0.1
+		ai_will_do = { factor = 0 }
+	}
+
+	gsm_caliph = {
+		random = no
+		sprite = 13
+		ai_will_do = { factor = 0 }
+	}
+}

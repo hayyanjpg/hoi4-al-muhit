@@ -1,0 +1,42 @@
+# Al-Muhit: merdeka, megalopolis, SDA + 112 slot industri penuh
+
+state={
+	id=453
+	name="STATE_453"
+
+	history={
+		owner = EGY
+		buildings = {
+			arms_factory = 4
+			dockyard = 7
+			industrial_complex = 3
+			infrastructure = 1
+
+		}
+		victory_points = {
+			4161 3 
+		}
+		victory_points = {
+			10099 1 
+		}
+		add_core_of = EGY
+
+	}
+
+	provinces={
+		1112 4161 10002 10099 11922 11979 12073 
+	}
+	manpower=15359
+	buildings_max_level_factor=1.000
+	state_category = megalopolis
+	resources={
+			steel=82
+			tungsten=32
+			rubber=5
+			chromium=23
+			coal=32
+			aluminium=21
+			oil=35
+		}
+	local_supplies=7.000
+}

@@ -1,0 +1,38 @@
+# Al-Muhit: merdeka, megalopolis, SDA + 112 slot industri penuh
+state = {
+	id = 552
+	name = "STATE_552"
+	manpower = 18539
+	
+	state_category = megalopolis
+	resources={
+			steel=66
+			tungsten=26
+			rubber=4
+			chromium=18
+			coal=26
+			aluminium=17
+			oil=28
+		}
+	impassable = yes
+	force_link_ownership_to = 456 # Aswan
+
+	history = {
+
+		owner = EGY
+		add_core_of = EGY
+
+		buildings = {
+			arms_factory = 9
+			industrial_complex = 5
+			infrastructure = 0
+		}
+
+	}
+
+	provinces = {
+		1143 2064 7216 10127 10869 10907 12099 12733 12764 12816 
+	}
+
+	local_supplies = 0.0 
+}

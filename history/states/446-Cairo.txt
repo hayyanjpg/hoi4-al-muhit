@@ -1,0 +1,54 @@
+# Al-Muhit: merdeka, megalopolis, SDA + 112 slot industri penuh
+state = {
+	id = 446
+	name = "STATE_446" # Suez
+	manpower = 131732
+	state_category = megalopolis
+	resources={
+			steel=103
+			tungsten=41
+			rubber=6
+			chromium=28
+			coal=41
+			aluminium=27
+			oil=43
+		}
+
+	history = {
+
+		owner = EGY
+		add_core_of = EGY
+
+		buildings = {
+			arms_factory = 5
+			dockyard = 6
+			industrial_complex = 3
+			infrastructure = 3
+			
+			12049 = {
+				naval_base = 2
+			}
+			4073 = {
+				naval_base = 1
+			}
+
+		}
+		
+		victory_points = {
+			12049 5 
+		}
+		
+		victory_points = {
+			4073 3 
+		}
+
+	}
+
+	provinces = {
+		1155 4073 9947 12049 
+	}
+
+	buildings_max_level_factor = 1.000
+	
+	local_supplies = 0.000
+}
